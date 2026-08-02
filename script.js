@@ -625,7 +625,11 @@ if(j>=finalText.length){
 
     }
 
-    replayBtn.style.display="inline-block";
+    launchFireworks();
+
+setInterval(shootingStar,3000);
+
+replayBtn.style.display="inline-block";
 
 }
 
@@ -642,3 +646,54 @@ replayBtn.onclick=function(){
 location.reload();
 
 }
+
+function launchFireworks(){
+
+const box=document.getElementById("fireworks");
+
+for(let i=0;i<120;i++){
+
+const dot=document.createElement("div");
+
+dot.className="firework";
+
+dot.style.left=(40+Math.random()*20)+"%";
+
+dot.style.top=(20+Math.random()*25)+"%";
+
+dot.style.setProperty("--x",(Math.random()*500-250)+"px");
+
+dot.style.setProperty("--y",(Math.random()*500-250)+"px");
+
+box.appendChild(dot);
+
+setTimeout(()=>{
+
+dot.remove();
+
+},1500);
+
+}
+
+}
+
+function shootingStar(){
+
+const star=document.createElement("div");
+
+star.className="shooting-star";
+
+star.style.left=Math.random()*30+"%";
+
+star.style.top=Math.random()*20+"%";
+
+document.getElementById("endingPage").appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},2000);
+
+}
+
