@@ -625,11 +625,7 @@ if(j>=finalText.length){
 
     }
 
-    launchFireworks();
-
-setInterval(shootingStar,3000);
-
-replayBtn.style.display="inline-block";
+    replayBtn.style.display="inline-block";
 
 }
 
